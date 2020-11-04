@@ -32,25 +32,13 @@ class _SimpleDialogContent extends StatelessWidget {
       children: <Widget>[
         Container(
           padding: EdgeInsets.all(16.0),
-          decoration: new BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(16.0),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 10.0,
-                offset: const Offset(0.0, 10.0),
-              ),
-            ],
-          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 18,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -58,13 +46,12 @@ class _SimpleDialogContent extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: TextField(
+                  decoration: InputDecoration(
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 5, horizontal: 4)),
                   controller: myController,
                   autofocus: true,
                   keyboardType: this.keyboardType,
-                  decoration: InputDecoration(
-                      border: new UnderlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  )),
                 ),
               ),
               SizedBox(height: 24.0),
