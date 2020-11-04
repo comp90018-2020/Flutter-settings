@@ -29,7 +29,7 @@ class SettingsButtonLayer extends StatelessWidget {
             child: Text(
               this.title,
               style: titleStyle ??
-                  Theme.of(context).textTheme.subtitle.copyWith(fontSize: 16),
+                  Theme.of(context).textTheme.subtitle2.copyWith(fontSize: 16),
               textAlign: textAlign(direction),
             ),
           ),

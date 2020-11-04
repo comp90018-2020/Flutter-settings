@@ -6,10 +6,10 @@ import 'package:flutter_settings/widgets/SettingsIcon.dart';
 abstract class BaseWidget extends StatelessWidget {
   final SettingsIcon icon;
   final Widget settingsWidget, overlayerWidget;
-   Function onPressed;
+  final Function onPressed;
   final WidgetDirection direction;
- 
-    BaseWidget(
+
+  BaseWidget(
       {Key key,
       @required this.settingsWidget,
       @required this.icon,

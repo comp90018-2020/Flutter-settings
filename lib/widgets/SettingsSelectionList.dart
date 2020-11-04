@@ -7,8 +7,7 @@ import 'package:flutter_settings/widgets/SettingsIcon.dart';
 
 class SettingsSelectionList<T> extends SettingsButton {
   final List<SettingsSelectionItem<T>> items;
-  SimpleSelectionDialog dialog;
-  int chosenItemIndex;
+  final int chosenItemIndex;
 
   SettingsSelectionList({
     this.chosenItemIndex = 0,
@@ -30,18 +29,18 @@ class SettingsSelectionList<T> extends SettingsButton {
             title: title,
             caption: caption,
             direction: direction,
-            onPressed: null) {
-    dialog = SimpleSelectionDialog(
-      direction: direction,
-      dialogTitle: dialogTitle ?? title,
-      items: items,
-      onSelect: onSelect,
-      chosenItemIndex: chosenItemIndex,
-      dismissText: dismissTitle ?? "Cancel",
-    );
-    this.onPressed = () {
-      showDialog<SettingsSelectionItem>(
-          context: context, builder: (BuildContext context) => dialog);
-    };
-  }
+            onPressed: () {
+              showDialog<SettingsSelectionItem>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return SimpleSelectionDialog(
+                      direction: direction,
+                      dialogTitle: dialogTitle ?? title,
+                      items: items,
+                      onSelect: onSelect,
+                      chosenItemIndex: chosenItemIndex,
+                      dismissText: dismissTitle ?? "Cancel",
+                    );
+                  });
+            });
 }

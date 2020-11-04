@@ -10,7 +10,7 @@ class SimpleSelectionDialog extends StatelessWidget {
   final Function onSelect;
   final WidgetDirection direction;
   final SelectionDialog selectionDialog;
-  int chosenItemIndex;
+  final int chosenItemIndex;
 
   SimpleSelectionDialog(
       {Key key,
@@ -46,7 +46,6 @@ class SimpleSelectionDialog extends StatelessWidget {
                           direction,
                           item.text,
                           items.indexOf(item) == chosenItemIndex, () {
-                        this.chosenItemIndex = items.indexOf(item);
                         onSelect(item, chosenItemIndex);
                         Navigator.of(context).pop();
                       }))
