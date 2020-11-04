@@ -15,10 +15,14 @@ class SettingsInputField extends SettingsButton {
     WidgetDirection direction = WidgetDirection.ltr,
     TextInputType keyboardType = TextInputType.text,
     String caption,
+    TextStyle titleStyle,
+    TextStyle captionStyle,
   }) : super(
             icon: icon,
             title: title,
             caption: caption,
+            captionStyle: captionStyle,
+            titleStyle: titleStyle,
             direction: direction,
             onPressed: () async {
               final output = await showDialog<String>(

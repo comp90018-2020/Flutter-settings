@@ -27,7 +27,7 @@ class SelectionCheckItem extends StatelessWidget {
                   : Alignment.centerRight,
               child: Text(title,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                   )),
             ),
             SizedBox(

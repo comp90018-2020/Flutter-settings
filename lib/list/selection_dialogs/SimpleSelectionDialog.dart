@@ -26,32 +26,15 @@ class SimpleSelectionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16.0),
-      ),
-      elevation: 4.0,
-      backgroundColor: Colors.transparent,
       child: Container(
         padding: EdgeInsets.all(16.0),
-        decoration: new BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 10.0,
-              offset: const Offset(0.0, 10.0),
-            ),
-          ],
-        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
               dialogTitle,
               style: TextStyle(
-                fontSize: 20.0,
+                fontSize: 18.0,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -80,7 +63,7 @@ class SimpleSelectionDialog extends StatelessWidget {
                 child: Text(
                   dismissText,
                   style: TextStyle(
-                    fontSize: 18.0,
+                    fontSize: 16.0,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
