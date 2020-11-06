@@ -6,16 +6,14 @@ import 'package:flutter_settings/widgets/SettingsButton.dart';
 import 'package:flutter_settings/widgets/SettingsIcon.dart';
 
 class SettingsNavigatorButton extends SettingsButton {
-  final Widget targetWidget;
-
   SettingsNavigatorButton({
-    @required this.targetWidget,
     @required BuildContext context,
     SettingsIcon icon,
     @required String title,
     TextStyle titleStyle,
     TextStyle captionStyle,
     WidgetDirection direction = WidgetDirection.ltr,
+    Function onPressed,
     String caption,
   }) : super(
             icon: icon,
@@ -24,12 +22,7 @@ class SettingsNavigatorButton extends SettingsButton {
             direction: direction,
             titleStyle: titleStyle,
             captionStyle: captionStyle,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => targetWidget),
-              );
-            },
+            onPressed: onPressed,
             overlayerWidget: new NavigatorLayer(
               direction: direction,
             ));
