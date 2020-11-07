@@ -4,19 +4,28 @@ import 'package:flutter_settings/util/SettingsConstants.dart';
 
 class SwitchCheckBoxShape extends CheckBoxLayerState {
   SwitchCheckBoxShape(
-      {bool checked, WidgetDirection direction, Function onPressed})
-      : super(checked: checked, direction: direction, onPressed: onPressed);
+      {bool checked,
+      WidgetDirection direction,
+      Function onPressed,
+      bool disabled})
+      : super(
+            checked: checked,
+            direction: direction,
+            onPressed: onPressed,
+            disabled: disabled);
 
   @override
   Widget getWidget() {
     return Container(
         margin: EdgeInsets.only(top: 2.0),
         child: Switch(
-          onChanged: (bool value) {
-            setState(() {
-              changeState();
-            });
-          },
+          onChanged: !disabled
+              ? (bool value) {
+                  setState(() {
+                    changeState();
+                  });
+                }
+              : null,
           value: this.checked,
           activeColor: Colors.white,
           activeTrackColor: Colors.green,

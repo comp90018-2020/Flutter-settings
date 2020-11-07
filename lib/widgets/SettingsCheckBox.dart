@@ -16,17 +16,18 @@ class SettingsCheckBox extends SettingsButton {
     CheckBoxWidgetType type = CheckBoxWidgetType.Box,
     TextStyle titleStyle,
     TextStyle captionStyle,
+    bool disabled,
   }) : super(
             icon: icon,
             title: title,
             caption: caption,
             direction: direction,
             overlayerWidget: CheckBoxLayer(
-              onPressed: onPressed,
-              direction: direction,
-              type: type,
-              value: value,
-            ),
+                onPressed: onPressed,
+                direction: direction,
+                type: type,
+                value: value,
+                disabled: disabled),
             onPressed: null,
             titleStyle: titleStyle,
             captionStyle: captionStyle);

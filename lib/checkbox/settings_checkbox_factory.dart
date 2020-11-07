@@ -5,13 +5,16 @@ import 'package:flutter_settings/util/SettingsConstants.dart';
 
 class SettingsCheckBoxFactory {
   static CheckBoxLayerState getType(CheckBoxWidgetType type, bool value,
-      WidgetDirection direction, Function onPressed) {
+      WidgetDirection direction, Function onPressed, bool disabled) {
     if (type == CheckBoxWidgetType.Box)
       return SquareCheckBoxLayer(
           checked: value, direction: direction, onPressed: onPressed);
     else if (type == CheckBoxWidgetType.Switch) {
       return SwitchCheckBoxShape(
-          checked: value, direction: direction, onPressed: onPressed);
+          checked: value,
+          direction: direction,
+          onPressed: onPressed,
+          disabled: disabled);
     }
     return null;
   }

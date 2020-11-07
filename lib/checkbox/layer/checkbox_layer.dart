@@ -7,18 +7,20 @@ class CheckBoxLayer extends StatefulWidget {
   final Function onPressed;
   final CheckBoxWidgetType type;
   final WidgetDirection direction;
+  final bool disabled;
   CheckBoxLayer(
       {this.type,
       this.direction = WidgetDirection.ltr,
       @required this.onPressed,
       this.value,
+      this.disabled,
       Key key})
       : super(key: key);
 
   @override
   CheckBoxLayerState createState() {
     return SettingsCheckBoxFactory.getType(
-        this.type, this.value, this.direction, this.onPressed);
+        this.type, this.value, this.direction, this.onPressed, this.disabled);
   }
 }
 
@@ -26,11 +28,13 @@ abstract class CheckBoxLayerState extends State<CheckBoxLayer> {
   bool checked;
   WidgetDirection direction;
   Function onPressed;
+  bool disabled;
 
   CheckBoxLayerState(
       {@required this.checked,
       @required this.direction,
-      @required this.onPressed});
+      @required this.onPressed,
+      this.disabled});
 
   Widget getWidget();
 
