@@ -19,7 +19,7 @@ class SwitchCheckBoxShape extends CheckBoxLayerState {
     return Container(
         margin: EdgeInsets.only(top: 2.0),
         child: Switch(
-          onChanged: !disabled
+          onChanged: disabled == false
               ? (bool value) {
                   setState(() {
                     changeState();
